@@ -1,0 +1,44 @@
+.modal {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    left: 0;
+    top: 0;
+    position: fixed;
+    &-container {
+        z-index: 2;
+        top: 130px;
+        width: 100%;
+        height: 130px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        position: absolute;
+        &__input {
+            padding: 20px;
+            width: 350px;
+            border: solid black 1px;
+            margin-right: 15px;
+            font-size: 25px;
+            font-family: 'Acme', sans-serif;
+            border-radius: 12px;
+            &:focus {
+                outline: 0;
+            }
+        }
+        &__search {
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
+            border: solid 2px orangered;
+            background: black;
+            padding: 5px;
+            cursor: pointer;
+            
+        }
+
+    }
+
+}

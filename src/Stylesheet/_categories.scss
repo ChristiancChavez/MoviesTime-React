@@ -1,0 +1,24 @@
+.categories {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-family: 'Monoton', cursive;
+    background: white;
+    &__option {
+        padding: 33px 15px;
+        text-align: center;
+        color: black;
+        cursor: pointer;
+        border: 1px black solid;
+        &:hover {
+            color: red;
+            background: black;
+        }
+        &:focus {
+            outline: 0;
+        }
+    }
+
+}

@@ -1,0 +1,32 @@
+.similar {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 25px;
+    justify-content: space-around;
+    font-size: 15px;
+    color: white;
+    font-family: 'Monoton', cursive;
+    margin: 15px 25px;
+    &__single {
+        width: 80px;
+        background: black;
+        box-shadow: 5px 10px 8px rgb(53, 46, 46);
+        text-align: center;
+        display: flex;
+        flex-flow: column;
+        border-radius: 6px;
+        margin: 20px;
+        &-image {
+            height: 70px;
+            border-top-left-radius: 6px; 
+            border-top-right-radius: 6px; 
+        }
+        &-name {
+            padding: 5px 0px;
+        }
+        &-date {
+            font-size: 10px;
+            padding-bottom: 5px;
+        }
+    }
+}
