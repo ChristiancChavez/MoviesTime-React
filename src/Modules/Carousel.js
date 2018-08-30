@@ -3,6 +3,7 @@ import movie from '../Images/alpha-movies.jpg';
 import serie from '../Images/casapapel-series.jpg';
 import leftArrow from '../Images/left.png';
 import rightArrow from '../Images/right.png';
+
 class Carousel extends  Component {
     render(){
         return(

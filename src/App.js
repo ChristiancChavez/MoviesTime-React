@@ -8,8 +8,18 @@ import PrincipalContainerMovie from './Modules/Principal-container-movie';
 import ModalLogin from './Modules/Modal-login';
 import SimilarMovies from './Modules/Similar-movies';
 import './main.css';
+import { requestGetGenresMovies } from './Request/request.js';
 
 class App extends Component {
+
+componentDidMount(){
+  requestGetGenresMovies().then((data) => {
+    console.log(data);
+  }).catch((error)  => {
+    console.log(error);
+  })
+};
+
   render() {
     return (
       <div>
@@ -18,7 +28,6 @@ class App extends Component {
         {/* <Modal /> */}
         <Carousel />
         <Categories />
-        {/* <Transition /> */}
         <PrincipalContainerMovie />
         <SimilarMovies />
         <Transition />
