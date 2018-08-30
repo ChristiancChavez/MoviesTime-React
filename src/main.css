@@ -10,7 +10,8 @@
   padding: 30px;
   color: #cc0000;
   font-family: 'Monoton', cursive;
-  z-index: 1; }
+  z-index: 1;
+  border-bottom: red 1px solid; }
   .header__logo {
     width: 70px;
     height: 70px; }
@@ -82,34 +83,89 @@
       padding: 5px;
       cursor: pointer; }
 
-.modal {
-  z-index: 1;
+.login {
+  z-index: 3;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.8);
   left: 0;
   top: 0;
   position: fixed; }
-  .modal-container {
-    z-index: 2;
-    top: 130px;
-    width: 100%;
-    height: 130px;
+  .login-container {
+    z-index: 4;
+    font-family: 'Monoton', cursive;
+    border: solid red 1px;
+    border-radius: 12px;
+    top: 70px;
+    width: 550px;
+    height: 450px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    position: absolute; }
-    .modal-container__input {
+    flex-flow: column;
+    background: black;
+    position: absolute;
+    padding: 15px;
+    text-align: center;
+    color: white;
+    left: 400px; }
+    .login-container__close {
+      width: 15px;
+      height: 15px;
+      align-self: flex-end;
+      cursor: pointer; }
+    .login-container__title {
+      font-size: 20px;
+      margin-bottom: 20px; }
+    .login-container__text {
+      font-size: 12px;
+      margin-bottom: 40px; }
+    .login-container__input {
       padding: 20px;
-      width: 350px;
-      border: solid black 1px;
-      margin-right: 15px;
-      font-size: 25px;
+      width: 300px;
+      border: solid red 1px;
+      font-size: 15px;
       font-family: 'Acme', sans-serif;
-      border-radius: 12px; }
-      .modal-container__input:focus {
+      border-radius: 12px;
+      margin-top: 20px;
+      align-self: center;
+      text-align: center; }
+      .login-container__input:focus {
         outline: 0; }
+    .login-container__button {
+      background: black;
+      color: white;
+      border-radius: 12px;
+      padding: 5px;
+      border: red 1px solid;
+      width: 345px;
+      font-size: 20px;
+      font-family: 'Monoton', cursive;
+      cursor: pointer;
+      align-self: center;
+      margin-top: 15px; }
+      .login-container__button:focus {
+        outline: 0; }
+      .login-container__button:hover {
+        color: black;
+        background: white; }
+    .login-container-networks {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      align-self: center;
+      width: 345px; }
+      .login-container-networks__network {
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        cursor: pointer; }
+        .login-container-networks__network--blue {
+          background: #5151c7; }
+        .login-container-networks__network--red {
+          background: #c54848; }
+        .login-container-networks__network--sky {
+          background: lightblue; }
 
 .carousel {
   display: flex;
@@ -180,81 +236,132 @@
 
 .container {
   display: flex;
-  flex-flow: row nowrap;
-  width: 1348px;
-  position: relative; }
-  .container-main {
-    display: flex;
-    flex-flow: column;
-    width: 1148px; }
-  .container-movie {
-    display: flex;
-    text-align: center;
-    flex-flow: column;
-    font-size: 30px;
-    font-family: 'Monoton', cursive;
-    position: relative; }
-    .container-movie__video {
-      align-self: center;
-      margin-top: 40px;
-      position: absolute;
-      top: 250px; }
-    .container-movie__toggle {
-      position: absolute;
-      background: black;
-      border: 2px solid red;
-      border-radius: 50px;
-      width: 25px;
-      height: 25px;
-      padding: 8px;
-      left: 2px;
-      top: 5px; }
+  text-align: center;
+  flex-flow: row;
+  font-family: 'Monoton', cursive;
+  position: relative;
+  height: 613px;
+  background-image: url("./Images/alpha-movies.jpg");
+  background-repeat: no-repeat;
+  background-size: 1349px 613px; }
+  .container__toggle {
+    position: absolute;
+    background: black;
+    border: 2px solid red;
+    border-radius: 50px;
+    width: 25px;
+    height: 25px;
+    padding: 8px;
+    left: 205px;
+    top: 5px;
+    cursor: pointer; }
   .container-info {
     display: flex;
     flex-flow: column;
-    width: 1000px;
     font-size: 30px;
-    background: rgba(0, 0, 0, 0.8);
-    border-radius: 15px;
     color: white;
-    position: absolute;
-    top: 30px;
-    left: 70px;
     text-align: center;
-    padding: 10px; }
+    width: 1147px;
+    height: 613px; }
+    .container-info__title {
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 12px;
+      width: 300px;
+      margin: 20px 0px;
+      align-self: center; }
+    .container-info__video {
+      align-self: center;
+      margin-top: 70px;
+      width: 560px;
+      height: 315px; }
     .container-info__description {
-      font-size: 15px;
+      font-size: 10px;
+      width: 800px;
       display: flex;
       flex-flow: row nowrap;
-      justify-content: space-around;
       align-items: center;
-      text-align: justify; }
+      justify-content: space-around;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 15px;
+      margin-bottom: 20px;
+      align-self: center;
+      padding: 5px; }
       .container-info__description-date {
         margin: 0px 10px; }
+      .container-info__description-text {
+        width: 700px; }
       .container-info__description-favorite {
         background: black;
         border: 2px solid red;
         border-radius: 50px;
-        width: 25px;
-        height: 25px;
-        padding: 5px; }
+        width: 20px;
+        height: 20px;
+        padding: 5px;
+        cursor: pointer; }
+
+.similars {
+  display: flex;
+  flex-flow: row nowrap;
+  font-family: 'Monoton', cursive;
+  height: 500px; }
+  .similars__title {
+    font-size: 35px;
+    background: black;
+    color: white;
+    width: 202px; }
+    .similars__title-text {
+      text-orientation: upright;
+      writing-mode: vertical-lr;
+      text-align: center;
+      padding-left: 30px; }
+  .similars .similar {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px;
+    justify-content: space-around;
+    font-size: 15px;
+    color: white;
+    width: 1127px;
+    align-content: flex-start; }
+    .similars .similar__single {
+      width: 80px;
+      background: black;
+      box-shadow: 5px 10px 8px #352e2e;
+      text-align: center;
+      display: flex;
+      flex-flow: column;
+      border-radius: 6px;
+      margin: 20px;
+      cursor: pointer; }
+      .similars .similar__single-image {
+        height: 70px;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px; }
+      .similars .similar__single-name {
+        padding: 5px 0px; }
+      .similars .similar__single-date {
+        font-size: 10px;
+        padding-bottom: 5px; }
 
 .favorites {
   display: flex;
   flex-flow: column;
-  background: rgba(0, 0, 0, 0.5);
-  color: black;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
   text-align: center;
   font-size: 17.5px;
   font-family: 'Monoton', cursive;
   width: 200px;
+  height: 611px;
   border: 1px black solid; }
   .favorites__title {
     padding: 20px 15px; }
   .favorites-movies {
     padding: 0px 15px;
-    height: 650px;
-    overflow: auto; }
+    height: 600px;
+    overflow: auto;
+    border: 1px solid black; }
     .favorites-movies__movie {
       font-size: 12px;
       padding-top: 20px;
@@ -272,35 +379,9 @@
   flex-flow: row nowrap;
   justify-content: space-around;
   background: black;
-  padding: 10px; }
+  padding: 10px;
+  border-bottom: 1px red solid;
+  border-top: 1px red solid; }
   .transition__image {
     width: 35px;
     height: 35px; }
-
-.similar {
-  display: flex;
-  flex-flow: row wrap;
-  padding: 25px;
-  justify-content: space-around;
-  font-size: 15px;
-  color: white;
-  font-family: 'Monoton', cursive;
-  margin: 15px 25px; }
-  .similar__single {
-    width: 80px;
-    background: black;
-    box-shadow: 5px 10px 8px #352e2e;
-    text-align: center;
-    display: flex;
-    flex-flow: column;
-    border-radius: 6px;
-    margin: 20px; }
-    .similar__single-image {
-      height: 70px;
-      border-top-left-radius: 6px;
-      border-top-right-radius: 6px; }
-    .similar__single-name {
-      padding: 5px 0px; }
-    .similar__single-date {
-      font-size: 10px;
-      padding-bottom: 5px; }

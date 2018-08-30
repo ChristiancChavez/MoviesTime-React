@@ -1,12 +1,29 @@
+.similars {
+    display: flex;
+    flex-flow: row nowrap;
+    font-family: 'Monoton', cursive;
+    height: 500px;
+    &__title {
+        font-size: 35px;
+        background: black;
+        color: white;
+        width: 202px;
+        &-text {
+            text-orientation: upright;
+            writing-mode: vertical-lr;
+            text-align: center;
+            padding-left: 30px;
+        }
+    }
 .similar {
     display: flex;
     flex-flow: row wrap;
-    padding: 25px;
+    padding: 10px;
     justify-content: space-around;
     font-size: 15px;
     color: white;
-    font-family: 'Monoton', cursive;
-    margin: 15px 25px;
+    width: 1127px;   
+    align-content: flex-start;
     &__single {
         width: 80px;
         background: black;
@@ -16,6 +33,7 @@
         flex-flow: column;
         border-radius: 6px;
         margin: 20px;
+        cursor: pointer;
         &-image {
             height: 70px;
             border-top-left-radius: 6px; 
@@ -29,4 +47,5 @@
             padding-bottom: 5px;
         }
     }
+}
 }

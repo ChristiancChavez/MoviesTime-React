@@ -6,6 +6,7 @@ import Categories from './Modules/Categories';
 import Transition from './Modules/Transition';
 import PrincipalContainerMovie from './Modules/Principal-container-movie';
 import ModalLogin from './Modules/Modal-login';
+import SimilarMovies from './Modules/Similar-movies';
 import './main.css';
 
 class App extends Component {
@@ -13,12 +14,14 @@ class App extends Component {
     return (
       <div>
         <Header />
+        {/* <ModalLogin /> */}
         {/* <Modal /> */}
         <Carousel />
         <Categories />
-        <Transition />
+        {/* <Transition /> */}
         <PrincipalContainerMovie />
-        
+        <SimilarMovies />
+        <Transition />
       </div>
     );
   }
