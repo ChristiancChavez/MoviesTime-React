@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
 
 class Categories extends Component {
+
+    constructor(){
+        super();
+        this.renderGenresList = this.renderGenresList.bind(this);
+    }
+
+    renderGenresList(){
+        const { genres } = this.props;
+        const eighteenGenres = genres.slice(0, 18);
+        return eighteenGenres.map((genre) => <span className="categories__option" key={genre.id}>{genre.name}</span>
+        );
+        
+    }
+
     render(){
         return(
             <div>
                 <div className="categories">
-                    <span className="categories__option">Billboard</span>
-                    <span className="categories__option">Action</span>
-                    <span className="categories__option">Romantic</span>
-                    <span className="categories__option">Comedy</span>
-                    <span className="categories__option">Terror</span>
-                    <span className="categories__option">Adventure</span>
-                    <span className="categories__option">Fantasy</span>
-                    <span className="categories__option">Thriller</span>
-                    <span className="categories__option">War</span>
-                    <span className="categories__option">Coming Soon</span>
+                    {this.renderGenresList()}
                 </div>
             </div>
         );

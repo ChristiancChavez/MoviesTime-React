@@ -1,13 +1,15 @@
 .categories {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: space-between;
-    font-size: 18px;
+    font-size: 13px;
     font-family: 'Monoton', cursive;
     background: white;
+    width: 1349px;
     &__option {
-        padding: 33px 15px;
+        width: 137px;
+        padding: 10px 5px;
         text-align: center;
         color: black;
         cursor: pointer;

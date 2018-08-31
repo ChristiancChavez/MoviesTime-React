@@ -4,6 +4,7 @@ import search from '../Images/search.png';
 import userIcon from '../Images/user.png';
 
 class Header extends Component {
+    
     render(){
         return(
             <div className="header">
