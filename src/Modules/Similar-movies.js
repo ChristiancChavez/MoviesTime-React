@@ -1,7 +1,20 @@
 import React, { Component } from 'react';
 import coverMovie from '../Images/alpha-cover.jpg';
+const baseUrlImage = 'https://image.tmdb.org/t/p/w500';
 
 class SimilarMovies extends Component {
+
+
+    requestSimilarMovies(){
+        const { similarMoviesList } = this.props;
+        const sixteen = similarMoviesList.slice(0, 16);
+        return sixteen.map((similar) =>  <div className="similar__single">
+        <img className="similar__single-image" src={baseUrlImage + (similar && similar.backdrop_path)}alt=""></img>
+        <span className="similar__single-name">{similar.title}</span>
+        <span className="similar__single-date">{similar.release_date.slice(0, 4)}</span>
+        </div>)
+    }
+
     render(){
         return(
             <div className="similars">
@@ -9,141 +22,7 @@ class SimilarMovies extends Component {
                     <span className="similars__title-text">SIMILAR MOVIES</span>
                 </div>
                 <div className="similar">
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
-                    <div className="similar__single">
-                        <img className="similar__single-image" src={coverMovie}alt=""></img>
-                        <span className="similar__single-name">ALPHA</span>
-                        <span className="similar__single-date">2018</span>
-                    </div>
+                {this.requestSimilarMovies()}
                 </div>
             </div>
         );

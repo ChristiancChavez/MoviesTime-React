@@ -316,28 +316,27 @@
     flex-flow: row wrap;
     padding: 10px;
     justify-content: space-around;
-    font-size: 15px;
+    font-size: 10px;
     color: white;
     width: 1127px;
-    align-content: flex-start; }
+    align-content: center; }
     .similars .similar__single {
-      width: 80px;
+      width: 110px;
       background: black;
       box-shadow: 5px 10px 8px #352e2e;
       text-align: center;
       display: flex;
       flex-flow: column;
       border-radius: 6px;
-      margin: 20px;
+      margin: 15px;
       cursor: pointer; }
       .similars .similar__single-image {
-        height: 70px;
+        height: 100px;
         border-top-left-radius: 6px;
         border-top-right-radius: 6px; }
       .similars .similar__single-name {
-        padding: 5px 0px; }
+        padding: 5px; }
       .similars .similar__single-date {
-        font-size: 10px;
         padding-bottom: 5px; }
 
 .favorites {
@@ -381,3 +380,6 @@
   .transition__image {
     width: 35px;
     height: 35px; }
+
+.hide {
+  display: none; }

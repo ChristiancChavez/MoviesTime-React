@@ -10,6 +10,7 @@ import SimilarMovies from './Modules/Similar-movies';
 import './main.css';
 import { requestGetGenresMovies } from './Request/request.js';
 import { requestMoviesList } from './Request/request.js';
+import { requestSimilarMovies } from './Request/request.js';
 
 class App extends Component {
   constructor() {
@@ -17,7 +18,7 @@ class App extends Component {
     this.state = {
       genres: [],
       movies: [],
-      series: [],
+      similarMoviesList: [],
     }
   }
 
@@ -41,15 +42,14 @@ class App extends Component {
       console.log(error);
     });
 
-    requestMoviesList(10770).then((list) => {
-      let seriesList = list.data.results;
+    requestSimilarMovies(299536).then((similar) => {
+      let similarMovies = similar.data.results
       this.setState({
-        series: seriesList,
+        similarMoviesList: similarMovies,
       })
-      console.log(seriesList);
-    }).catch((error)  => {
+    }).catch((error) => {
       console.log(error);
-    });
+    })
   }
 
 
@@ -60,12 +60,12 @@ class App extends Component {
     return (
       <div>
         <Header />
-        {/* <ModalLogin /> */}
-        {/* <Modal /> */}
+        <ModalLogin /> 
+         <Modal />
         <Carousel movies={this.state.movies}/>
         <Categories genres={this.state.genres}/>
         <PrincipalContainerMovie />
-        <SimilarMovies />
+        <SimilarMovies similarMoviesList={this.state.similarMoviesList} />
         <Transition />
       </div>
     );

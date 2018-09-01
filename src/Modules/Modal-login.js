@@ -7,7 +7,7 @@ import twitter from '../Images/twitter.png';
 class Modal extends Component {
     render(){
         return(
-            <div className="login">
+            <div className="login hide">
                 <div className="login-container">
                     <img className="login-container__close" src={close} alt=""></img>
                     <span className="login-container__title">LOGIN</span>

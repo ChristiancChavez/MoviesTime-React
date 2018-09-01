@@ -1,31 +1,61 @@
 import React, { Component } from 'react';
-// import movie from '../Images/alpha-movies.jpg';
-import serie from '../Images/casapapel-series.jpg';
 import leftArrow from '../Images/left.png';
 import rightArrow from '../Images/right.png';
-let baseUrlImage = 'https://image.tmdb.org/t/p/w500';
+const baseUrlImage = 'https://image.tmdb.org/t/p/w500';
 
 class Carousel extends  Component {
     
     constructor(){
         super();
-        this.requestMoviesList = this.requestMoviesList.bind(this);
+        this.state = {
+           view: 0,
+        }
+
+        this.moveRight = this.moveRight.bind(this);
+        this.moveLeft = this.moveLeft.bind(this);
     }
 
-    requestMoviesList(){
-        const { movies } = this.props;
-        const fourteenGenres = movies.slice(0, 14);
-        return fourteenGenres.map((movieCarousel) => <img className="carousel-category__image" key={movieCarousel.id} src={baseUrlImage+movieCarousel.backdrop_path} alt=""></img>)
+    moveRight(){
+        if(this.state.view === this.props.movies.length - 1){
+            this.setState({
+                view: 0,
+            })
+        }else {
+            this.setState({
+                view: this.state.view + 1,
+            })
+        }
+        
     }
+
+    moveLeft(){
+        if(this.state.view === 0){
+            this.setState({
+                view: this.props.movies.length - 1,
+            })
+        }else {
+            this.setState({
+                view: this.state.view - 1,
+            })
+        }
+    }
+    
+    componentDidMount() {
+        this.interval = setInterval(() => {
+            this.moveRight();
+        }, 2000);
+      }
+      
 
     render(){
+        const selectedMovie = this.props.movies[this.state.view];
         return(
             <div className="carousel">
                 <div className="carousel-category">
-                {this.requestMoviesList()}
+                    <img className="carousel-category__image" src={baseUrlImage + (selectedMovie && selectedMovie.backdrop_path)} alt="" />
                     <div className="carousel-category__arrows">
-                        <img className="carousel-category__arrows-arrow" src={leftArrow} alt=""></img>
-                        <img className="carousel-category__arrows-arrow" src={rightArrow} alt=""></img>
+                        <img className="carousel-category__arrows-arrow" onClick={this.moveLeft} src={leftArrow} alt="" />
+                        <img className="carousel-category__arrows-arrow" onClick={this.moveRight} src={rightArrow} alt="" />
                     </div>
                     <button className="carousel-category__button carousel-category__button"> BEST CURRENT MOVIES</button>
                 </div>
