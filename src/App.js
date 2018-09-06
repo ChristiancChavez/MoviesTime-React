@@ -11,6 +11,7 @@ import './main.css';
 import { requestGetGenresMovies } from './Request/request.js';
 import { requestMoviesList } from './Request/request.js';
 import { requestSimilarMovies } from './Request/request.js';
+import {  requestInfoMovie } from './Request/request.js';
 
 class App extends Component {
   constructor() {
@@ -19,6 +20,7 @@ class App extends Component {
       genres: [],
       movies: [],
       similarMoviesList: [],
+      allInfoMovie:[],
     }
   }
 
@@ -50,11 +52,16 @@ class App extends Component {
     }).catch((error) => {
       console.log(error);
     })
+
+    requestInfoMovie(299536).then((infoMovie) => {
+      let infoMovieSingle = infoMovie.data
+      this.setState({
+        allInfoMovie:infoMovieSingle,
+      })
+    }).catch((error) => {
+      console.log(error);
+    })
   }
-
-
-  
-
 
   render() {
     return (
@@ -64,7 +71,7 @@ class App extends Component {
          <Modal />
         <Carousel movies={this.state.movies}/>
         <Categories genres={this.state.genres}/>
-        <PrincipalContainerMovie />
+        <PrincipalContainerMovie allInfoMovie={this.state.allInfoMovie} />
         <SimilarMovies similarMoviesList={this.state.similarMoviesList} />
         <Transition />
       </div>
