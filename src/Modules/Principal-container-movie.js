@@ -23,7 +23,7 @@ class PrincipalContainerMovie extends Component {
 
     render(){
         const requestMovie = this.props.allInfoMovie;
-        console.log(requestMovie.id , " soy la info de la pelicula");
+        console.log(requestMovie , " soy la info de la pelicula");
         return(
             <div className="container">
                 {this.state.isFavoritesVisible && <Favorites />}
@@ -34,10 +34,10 @@ class PrincipalContainerMovie extends Component {
                         <p  className="container-info__description-text">
                             {requestMovie.overview}
                         </p>
-                        {/* <span className="container-info__description-date">{requestMovie.release_date.slice(0, 4)}</span> */}
-                        <img className="container-info__description-favorite" id={requestMovie.id} src={favorit} alt=""/>
+                        <span className="container-info__description-date">{requestMovie.release_date && requestMovie.release_date.substr(0, 4)}</span>
+                        <img className="container-info__description-favorite" src={favorit} alt=""/>
                     </div> 
-                    {/* <iframe className="container-info__video"  src={baseUrlTrailerDefault+}  allow="autoplay; encrypted-media" ></iframe> */}
+                    <iframe className="container-info__video"  src={baseUrlTrailerDefault + (requestMovie && requestMovie.backdrop_path)}  allow="autoplay; encrypted-media" ></iframe>
                 </div> 
             </div>
         );

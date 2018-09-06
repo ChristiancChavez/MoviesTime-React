@@ -239,7 +239,8 @@
   height: 613px;
   background-image: url("./Images/alpha-movies.jpg");
   background-repeat: no-repeat;
-  background-size: 1349px 613px; }
+  background-size: 1349px 613px;
+  padding: 10px; }
   .container__toggle {
     position: absolute;
     background: black;
@@ -267,12 +268,12 @@
       align-self: center; }
     .container-info__video {
       align-self: center;
-      margin-top: 70px;
+      margin-top: 45px;
       width: 560px;
       height: 315px; }
     .container-info__description {
       font-size: 10px;
-      width: 800px;
+      width: 850px;
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
@@ -280,7 +281,7 @@
       text-align: center;
       background: rgba(0, 0, 0, 0.6);
       border-radius: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       align-self: center;
       padding: 5px; }
       .container-info__description-date {
