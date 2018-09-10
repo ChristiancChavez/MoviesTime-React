@@ -82,6 +82,11 @@
       background: black;
       padding: 5px;
       cursor: pointer; }
+    .modal-container_close {
+      cursor: pointer;
+      width: 25px;
+      height: 25px;
+      margin-left: 20px; }
 
 .login {
   z-index: 3;
@@ -237,10 +242,8 @@
   font-family: 'Monoton', cursive;
   position: relative;
   height: 613px;
-  background-image: url("./Images/alpha-movies.jpg");
   background-repeat: no-repeat;
-  background-size: 1349px 613px;
-  padding: 10px; }
+  background-size: 1349px 620px; }
   .container__toggle {
     position: absolute;
     background: black;
@@ -259,11 +262,11 @@
     color: white;
     text-align: center;
     width: 1500px;
-    height: 613px; }
+    height: 620px; }
     .container-info__title {
       background: rgba(0, 0, 0, 0.8);
       border-radius: 12px;
-      width: 300px;
+      width: 900px;
       margin: 20px 0px;
       align-self: center; }
     .container-info__video {
@@ -273,13 +276,13 @@
       height: 315px; }
     .container-info__description {
       font-size: 10px;
-      width: 850px;
+      width: 900px;
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
       justify-content: space-around;
       text-align: center;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0, 0, 0, 0.8);
       border-radius: 15px;
       margin-bottom: 15px;
       align-self: center;
@@ -287,7 +290,7 @@
       .container-info__description-date {
         margin: 0px 10px; }
       .container-info__description-text {
-        width: 700px; }
+        width: 760px; }
       .container-info__description-favorite {
         background: black;
         border: 2px solid red;
@@ -320,7 +323,8 @@
     font-size: 10px;
     color: white;
     width: 1127px;
-    align-content: center; }
+    align-content: center;
+    cursor: pointer; }
     .similars .similar__single {
       width: 110px;
       background: black;
@@ -363,7 +367,8 @@
       padding-top: 20px;
       display: flex;
       flex-flow: column;
-      margin-bottom: 20px; }
+      margin-bottom: 20px;
+      cursor: pointer; }
       .favorites-movies__movie-image {
         width: 80px;
         margin-bottom: 5px;

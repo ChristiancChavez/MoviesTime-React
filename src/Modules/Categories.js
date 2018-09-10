@@ -10,10 +10,10 @@ class Categories extends Component {
     renderGenresList(){
         const { genres } = this.props;
         const eighteenGenres = genres.slice(0, 18);
-        return eighteenGenres.map((genre) => <span className="categories__option" key={genre.id}>{genre.name}</span>
+        return eighteenGenres.map((genre) => <span className="categories__option" key={genre.id} onClick={() => this.props.getMoviesList(genre.id)} >{genre.name}</span>
         );
-        
     }
+
 
     render(){
         return(

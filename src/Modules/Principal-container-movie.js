@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Favorites from './Favorites';
 import favorit from '../Images/favorit.png';
-import favoritToggle from '../Images/favorit.png';
+import favoritToggle from '../Images/movies.png';
 const baseUrlTrailerDefault = 'https://www.youtube.com/embed/';
+const baseUrlImage = 'https://image.tmdb.org/t/p/w500';
 
 class PrincipalContainerMovie extends Component {
     constructor(){
@@ -17,16 +18,24 @@ class PrincipalContainerMovie extends Component {
         this.setState({
             isFavoritesVisible: !this.state.isFavoritesVisible, 
         })  
-         
     };
 
+    
 
     render(){
         const requestMovie = this.props.allInfoMovie;
-        console.log(requestMovie , " soy la info de la pelicula");
+        const containerStyle = {
+            backgroundImage: `url('${baseUrlImage}${requestMovie.backdrop_path}')`,
+        }
+        const iframeStyle = {
+            color: "white",
+            background : "black",
+            fontfamily: "'Monoton', cursive", 
+            fontSize: "20px",
+        }
         return(
-            <div className="container">
-                {this.state.isFavoritesVisible && <Favorites />}
+            <div className="container" style={containerStyle}>
+                {this.state.isFavoritesVisible && <Favorites changeMovieToShow={this.props.changeMovieToShow} movies={this.props.movies} />}
                 {this.state.isFavoritesVisible ? <img className="container__toggle" onClick={this.hideShowFavorites} src={favoritToggle} alt=""></img> : <img className="moveLeft" onClick={this.hideShowFavorites} src={favoritToggle} alt=""></img>}
                 <div className="container-info">
                     <span className="container-info__title">{requestMovie.title}</span>
@@ -35,9 +44,9 @@ class PrincipalContainerMovie extends Component {
                             {requestMovie.overview}
                         </p>
                         <span className="container-info__description-date">{requestMovie.release_date && requestMovie.release_date.substr(0, 4)}</span>
-                        <img className="container-info__description-favorite" src={favorit} alt=""/>
+                        <img className="container-info__description-favorite"  src={favorit} alt=""/>
                     </div> 
-                    <iframe className="container-info__video"  src={baseUrlTrailerDefault + (requestMovie && requestMovie.backdrop_path)}  allow="autoplay; encrypted-media" ></iframe>
+                    {requestMovie.videos && requestMovie.videos.results[0] ? <iframe className="container-info__video"  src={baseUrlTrailerDefault + (requestMovie.videos && requestMovie.videos.results[0].key)}  allow="autoplay; encrypted-media" ></iframe> : <p style={iframeStyle}>This movie doesn't have a trailer</p>}
                 </div> 
             </div>
         );

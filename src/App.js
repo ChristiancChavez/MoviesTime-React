@@ -21,30 +21,85 @@ class App extends Component {
       movies: [],
       similarMoviesList: [],
       allInfoMovie:[],
+      movieToShow : {
+        name: "",
+        description: "",
+        date: "",
+        image: "",
+        video:"",
+      },
+      isModalLoginOpen: false,
     }
+    this.getMoviesList = this.getMoviesList.bind(this);
+    this.getInfoMovie = this.getInfoMovie.bind(this);
+    this.getSimilarMovies = this.getSimilarMovies.bind(this);
+    this.changeMovieToShow = this.changeMovieToShow.bind(this);
+    this.hideModal = this.hideModal.bind(this);
+    this.showModal = this.showModal.bind(this);
   }
 
   componentDidMount(){
     requestGetGenresMovies().then((info) => {
       let genreList = info.data.genres;
+      this.getMoviesList(genreList[0].id);
+
       this.setState({
-        genres: genreList,
-        
+        genres: genreList, 
       })
     }).catch((error)  => {
       console.log(error);
     });
+  }
 
-    requestMoviesList(28).then((list) => {
+  changeMovieToShow(infomovie){
+    requestInfoMovie(infomovie.id).then((singleMovie) => {
+      let allSingleMovie = singleMovie.data;
+      this.getSimilarMovies(infomovie.id);
+      this.setState({
+        movieToShow:allSingleMovie,
+      })
+    }).catch((error) => {
+      console.log(error);
+    })
+     const movieInfo = {
+      title: infomovie.title,
+      overview: infomovie.overview,
+      release_date: infomovie.release_date,
+      poster_path: infomovie.poster_path,
+      trailer: infomovie.video,
+    }
+    this.setState({
+      movieToShow: movieInfo,
+    })
+  }
+
+
+  getMoviesList(genreId){
+    requestMoviesList(genreId).then((list) => {
       let moviesList = list.data.results;
+      this.getInfoMovie(moviesList[0].id);
       this.setState({
         movies: moviesList,
       })
     }).catch((error)  => {
       console.log(error);
     });
+  }
 
-    requestSimilarMovies(299536).then((similar) => {
+  getInfoMovie(movieId){
+    requestInfoMovie(movieId).then((infoMovie) => {
+      let infoMovieSingle = infoMovie.data;
+      this.getSimilarMovies(movieId);
+      this.setState({
+        movieToShow:infoMovieSingle,
+      })
+    }).catch((error) => {
+      console.log(error);
+    })
+  }
+
+  getSimilarMovies(movieId){
+    requestSimilarMovies(movieId).then((similar) => {
       let similarMovies = similar.data.results
       this.setState({
         similarMoviesList: similarMovies,
@@ -52,27 +107,31 @@ class App extends Component {
     }).catch((error) => {
       console.log(error);
     })
+  }
 
-    requestInfoMovie(299536).then((infoMovie) => {
-      let infoMovieSingle = infoMovie.data
-      this.setState({
-        allInfoMovie:infoMovieSingle,
-      })
-    }).catch((error) => {
-      console.log(error);
+  hideModal(){
+    this.setState({
+        isModalLoginOpen : false,
     })
   }
+
+  showModal(){
+    this.setState({
+        isModalLoginOpen : true,
+    })
+  }
+
 
   render() {
     return (
       <div>
-        <Header />
-        <ModalLogin /> 
-         <Modal />
+        <Header showModal={this.showModal} showSearch={this.showSearch} />
+        {this.state.isModalLoginOpen ? <ModalLogin hideModal={this.hideModal} /> : ""} 
+        <Modal />
         <Carousel movies={this.state.movies}/>
-        <Categories genres={this.state.genres}/>
-        <PrincipalContainerMovie allInfoMovie={this.state.allInfoMovie} />
-        <SimilarMovies similarMoviesList={this.state.similarMoviesList} />
+        <Categories  getMoviesList={this.getMoviesList}  genres={this.state.genres}/>
+        <PrincipalContainerMovie changeMovieToShow={this.changeMovieToShow} movies={this.state.movies}  allInfoMovie={this.state.movieToShow} />
+        <SimilarMovies changeMovieToShow={this.changeMovieToShow} similarMoviesList={this.state.similarMoviesList} />
         <Transition />
       </div>
     );

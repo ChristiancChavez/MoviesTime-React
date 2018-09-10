@@ -5,11 +5,14 @@ import google from '../Images/google-plus.png';
 import twitter from '../Images/twitter.png';
 
 class Modal extends Component {
+
+
+    
     render(){
         return(
-            <div className="login hide">
+            <div className="login">
                 <div className="login-container">
-                    <img className="login-container__close" src={close} alt=""></img>
+                    <img className="login-container__close"  src={close} alt="" onClick={this.props.hideModal} />
                     <span className="login-container__title">LOGIN</span>
                     <span className="login-container__text">Access with your account or Social Network</span>
                     <div className="login-container-networks">
