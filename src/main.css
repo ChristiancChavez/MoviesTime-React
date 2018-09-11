@@ -82,7 +82,7 @@
       background: black;
       padding: 5px;
       cursor: pointer; }
-    .modal-container_close {
+    .modal-container__close {
       cursor: pointer;
       width: 25px;
       height: 25px;
@@ -180,7 +180,7 @@
     justify-content: center;
     border: 2px solid black; }
     .carousel-category__image {
-      width: 1300px;
+      width: 100%;
       height: 500px;
       align-self: center; }
     .carousel-category__arrows {
@@ -188,30 +188,13 @@
       bottom: 200px;
       display: flex;
       justify-content: space-between;
-      width: 1284px;
-      margin-left: 30px; }
+      width: 98%;
+      margin-left: 9px; }
       .carousel-category__arrows-arrow {
         border-radius: 50px;
         background-color: rgba(255, 255, 204, 0.9);
-        padding: 8px;
+        padding: 7px;
         cursor: pointer; }
-    .carousel-category__button {
-      background: black;
-      color: white;
-      border-radius: 20px;
-      padding: 10px 15px;
-      border: red 1px solid;
-      position: absolute;
-      bottom: 50px;
-      font-size: 20px;
-      font-family: 'Monoton', cursive;
-      left: 500px;
-      cursor: pointer; }
-      .carousel-category__button:focus {
-        outline: 0; }
-      .carousel-category__button:hover {
-        color: red;
-        border: white 1px solid; }
 
 .categories {
   display: flex;
@@ -221,7 +204,7 @@
   font-size: 13px;
   font-family: 'Monoton', cursive;
   background: white;
-  width: 1349px; }
+  width: 100%; }
   .categories__option {
     width: 137px;
     padding: 10px 5px;
@@ -243,30 +226,19 @@
   position: relative;
   height: 613px;
   background-repeat: no-repeat;
-  background-size: 1349px 620px; }
-  .container__toggle {
-    position: absolute;
-    background: black;
-    border: 2px solid red;
-    border-radius: 50px;
-    width: 25px;
-    height: 25px;
-    padding: 8px;
-    left: 205px;
-    top: 5px;
-    cursor: pointer; }
+  background-size: 100% 620px; }
   .container-info {
     display: flex;
     flex-flow: column;
     font-size: 30px;
     color: white;
     text-align: center;
-    width: 1500px;
+    width: 100%;
     height: 620px; }
     .container-info__title {
       background: rgba(0, 0, 0, 0.8);
       border-radius: 12px;
-      width: 900px;
+      width: 90%;
       margin: 20px 0px;
       align-self: center; }
     .container-info__video {
@@ -276,7 +248,7 @@
       height: 315px; }
     .container-info__description {
       font-size: 10px;
-      width: 900px;
+      width: 90%;
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
@@ -290,7 +262,7 @@
       .container-info__description-date {
         margin: 0px 10px; }
       .container-info__description-text {
-        width: 760px; }
+        width: 800px; }
       .container-info__description-favorite {
         background: black;
         border: 2px solid red;
@@ -303,13 +275,12 @@
 .similars {
   display: flex;
   flex-flow: row nowrap;
-  font-family: 'Monoton', cursive;
-  height: 500px; }
+  font-family: 'Monoton', cursive; }
   .similars__title {
     font-size: 35px;
     background: black;
     color: white;
-    width: 202px; }
+    width: 15.5%; }
     .similars__title-text {
       text-orientation: upright;
       writing-mode: vertical-lr;
@@ -318,11 +289,11 @@
   .similars .similar {
     display: flex;
     flex-flow: row wrap;
-    padding: 10px;
+    padding: 15px;
     justify-content: space-around;
     font-size: 10px;
     color: white;
-    width: 1127px;
+    width: 100%;
     align-content: center;
     cursor: pointer; }
     .similars .similar__single {
@@ -334,7 +305,8 @@
       flex-flow: column;
       border-radius: 6px;
       margin: 15px;
-      cursor: pointer; }
+      cursor: pointer;
+      margin-bottom: 30px; }
       .similars .similar__single-image {
         height: 100px;
         border-top-left-radius: 6px;
@@ -352,7 +324,7 @@
   text-align: center;
   font-size: 17.5px;
   font-family: 'Monoton', cursive;
-  width: 264px;
+  width: 15%;
   height: 611px;
   border: 1px black solid; }
   .favorites__title {
