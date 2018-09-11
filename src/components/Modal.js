@@ -9,7 +9,7 @@ class Modal extends Component {
                 <div className="modal-container">
                     <input className="modal-container__input" type="text"/>
                     <img className="modal-container__search" src={search} alt=""/>
-                    <img className="modal-container__close"  src={close} alt="" onClick={this.props.hideSearch} />
+                    <img className="modal-container__close"  src={close} alt="" onClick={this.props.toggleSearch} />
                 </div>
             </div>
         )
