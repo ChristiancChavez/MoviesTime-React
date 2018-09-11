@@ -57,7 +57,6 @@ class Carousel extends  Component {
                         <img className="carousel-category__arrows-arrow" onClick={this.moveLeft} src={leftArrow} alt="" />
                         <img className="carousel-category__arrows-arrow" onClick={this.moveRight} src={rightArrow} alt="" />
                     </div>
-                    <button className="carousel-category__button carousel-category__button"> BEST CURRENT MOVIES</button>
                 </div>
             </div>
         );
