@@ -46,7 +46,7 @@ class PrincipalContainerMovie extends Component {
                         <span className="container-info__description-date">{requestMovie.release_date && requestMovie.release_date.substr(0, 4)}</span>
                         <img className="container-info__description-favorite"  src={favorit} alt=""/>
                     </div> 
-                    {requestMovie.videos && requestMovie.videos.results[0] ? <iframe className="container-info__video"  src={baseUrlTrailerDefault + (requestMovie.videos && requestMovie.videos.results[0].key)}  allow="autoplay; encrypted-media" ></iframe> : <p style={iframeStyle}>This movie doesn't have a trailer</p>}
+                    {requestMovie.videos && requestMovie.videos.results[0] ? <iframe className="container-info__video" title="Movie's trailer" src={baseUrlTrailerDefault + (requestMovie.videos && requestMovie.videos.results[0].key)}  allow="autoplay; encrypted-media" ></iframe> : <p style={iframeStyle}>This movie doesn't have a trailer</p>}
                 </div> 
             </div>
         );

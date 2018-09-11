@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import logo from '../Images/logo.png';
 import search from '../Images/search.png';
 import userIcon from '../Images/user.png';
-import modalLogin from './Modal-login';
 
 class Header extends Component {
 
