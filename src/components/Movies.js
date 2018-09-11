@@ -10,10 +10,10 @@ class movies extends Component {
 
     listCategoryMovies(){
         const { movies, changeMovieToShow } = this.props;
-        return movies.map((movie) => <div className="movies-movies__movie" key={movie.id} onClick={() => changeMovieToShow(movie.id)}>
-        <img className="movies-movies__movie-image" src={baseUrlImage + (movie && movie.poster_path)} alt=""></img>
-        <span className="movies-movies__movie-text">{movie.title}</span>
-        <span className="movies-movies__movie-text">{movie.release_date.slice(0, 4)}</span>
+        return movies.map((movie) => <div className="movies-container__movie" key={movie.id} onClick={() => changeMovieToShow(movie.id)}>
+        <img className="movies-container__movie-image" src={baseUrlImage + (movie && movie.poster_path)} alt=""></img>
+        <span className="movies-container__movie-text">{movie.title}</span>
+        <span className="movies-container__movie-text">{movie.release_date.slice(0, 4)}</span>
         </div>)
     }  
 
@@ -21,7 +21,7 @@ class movies extends Component {
         return(
             <div className="movies" > 
                 <span className="movies__title">Movies</span>
-                <div className="movies-movies">
+                <div className="movies-container">
                     {this.listCategoryMovies()}
                 </div>
             </div>
