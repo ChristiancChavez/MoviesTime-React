@@ -10,7 +10,7 @@ class Favorites extends Component {
 
     listCategoryMovies(){
         const { movies, changeMovieToShow } = this.props;
-        return movies.map((movie) => <div className="favorites-movies__movie" key={movie.id} onClick={() => changeMovieToShow(movie)}>
+        return movies.map((movie) => <div className="favorites-movies__movie" key={movie.id} onClick={() => changeMovieToShow(movie.id)}>
         <img className="favorites-movies__movie-image" src={baseUrlImage + (movie && movie.poster_path)} alt=""></img>
         <span className="favorites-movies__movie-text">{movie.title}</span>
         <span className="favorites-movies__movie-text">{movie.release_date.slice(0, 4)}</span>

@@ -12,7 +12,7 @@ class Header extends Component {
                 <img className="header__logo" src={logo} alt=""></img>
                 <span className="header__title">Movies Time</span>
                 <div className="header__finalOptions">
-                    <img className="header__finalOptions-userIcon" onClick={this.props.showModal} src={userIcon} alt=""></img>
+                    <img className="header__finalOptions-userIcon" onClick={this.props.toggleModal} src={userIcon} alt=""></img>
                     <img className="header__finalOptions-search" onClick={this.props.showSearch} src={search} alt=""></img>
                 </div>
             </div>

@@ -5,9 +5,9 @@ class SimilarMovies extends Component {
 
 
     requestSimilarMovies(){
-        const { similarMoviesList, changeMovieToShow } = this.props;
-        const sixteen = similarMoviesList.slice(0, 16);
-        return sixteen.map((similar) =>  <div className="similar__single" key={similar.id} onClick={() => changeMovieToShow(similar)}>
+        const { similarMovies, changeMovieToShow } = this.props;
+        const sixteen = similarMovies.slice(0, 16);
+        return sixteen.map((similar) =>  <div className="similar__single" key={similar.id} onClick={() => changeMovieToShow(similar.id)}>
         <img className="similar__single-image" src={baseUrlImage + (similar && similar.backdrop_path)}alt=""></img>
         <span className="similar__single-name">{similar.title}</span>
         <span className="similar__single-date">{similar.release_date.slice(0, 4)}</span>

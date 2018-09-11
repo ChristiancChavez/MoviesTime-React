@@ -23,7 +23,7 @@ class PrincipalContainerMovie extends Component {
     
 
     render(){
-        const requestMovie = this.props.allInfoMovie;
+        const requestMovie = this.props.movieToShow;
         const containerStyle = {
             backgroundImage: `url('${baseUrlImage}${requestMovie.backdrop_path}')`,
         }

@@ -12,7 +12,7 @@ class Modal extends Component {
         return(
             <div className="login">
                 <div className="login-container">
-                    <img className="login-container__close"  src={close} alt="" onClick={this.props.hideModal} />
+                    <img className="login-container__close"  src={close} alt="" onClick={this.props.toggleModal} />
                     <span className="login-container__title">LOGIN</span>
                     <span className="login-container__text">Access with your account or Social Network</span>
                     <div className="login-container-networks">
