@@ -29,6 +29,7 @@ class App extends Component {
         video:"",
       },
       isModalLoginOpen: false,
+      isSearchOpen: false,
     }
     this.getMoviesList = this.getMoviesList.bind(this);
     this.getInfoMovie = this.getInfoMovie.bind(this);
@@ -36,6 +37,8 @@ class App extends Component {
     this.changeMovieToShow = this.changeMovieToShow.bind(this);
     this.hideModal = this.hideModal.bind(this);
     this.showModal = this.showModal.bind(this);
+    this.hideSearch = this.hideSearch.bind(this);
+    this.showSearch = this.showSearch.bind(this);
   }
 
   componentDidMount(){
@@ -121,13 +124,25 @@ class App extends Component {
     })
   }
 
+  hideSearch(){
+    this.setState({
+        isSearchOpen : false,
+    })
+  }
+
+  showSearch(){
+    this.setState({
+        isSearchOpen : true,
+    })
+  }
+
 
   render() {
     return (
       <div>
         <Header showModal={this.showModal} showSearch={this.showSearch} />
         {this.state.isModalLoginOpen ? <ModalLogin hideModal={this.hideModal} /> : ""} 
-        <Modal />
+        {this.state.isSearchOpen ? <Modal hideSearch={this.hideSearch} /> : ""}
         <Carousel movies={this.state.movies}/>
         <Categories  getMoviesList={this.getMoviesList}  genres={this.state.genres}/>
         <PrincipalContainerMovie changeMovieToShow={this.changeMovieToShow} movies={this.state.movies}  allInfoMovie={this.state.movieToShow} />

@@ -13,7 +13,7 @@ class Header extends Component {
                 <span className="header__title">Movies Time</span>
                 <div className="header__finalOptions">
                     <img className="header__finalOptions-userIcon" onClick={this.props.showModal} src={userIcon} alt=""></img>
-                    <img className="header__finalOptions-search" src={search} alt=""></img>
+                    <img className="header__finalOptions-search" onClick={this.props.showSearch} src={search} alt=""></img>
                 </div>
             </div>
         );
