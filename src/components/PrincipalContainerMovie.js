@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Movies from './Movies';
+import SimilarMovies from './SimilarMovies';
 const baseUrlTrailerDefault = 'https://www.youtube.com/embed/';
 const baseUrlImage = 'https://image.tmdb.org/t/p/w500';
 
@@ -17,18 +18,23 @@ class PrincipalContainerMovie extends Component {
             fontSize: "20px",
         }
         return(
-            <div className="container" style={containerStyle}>
+            <div className="container">
                 <Movies changeMovieToShow={this.props.changeMovieToShow} movies={this.props.movies} />
-                <div className="container-info">
-                    <span className="container-info__title">{requestMovie.title}</span>
-                    <div className="container-info__description">
-                        <p  className="container-info__description-text">
-                            {requestMovie.overview}
-                        </p>
-                        <span className="container-info__description-date">{requestMovie.release_date && requestMovie.release_date.substr(0, 4)}</span>
-                    </div> 
-                    {requestMovie.videos && requestMovie.videos.results[0] ? <iframe className="container-info__video" title="Movie's trailer" src={baseUrlTrailerDefault + (requestMovie.videos && requestMovie.videos.results[0].key)}  allow="autoplay; encrypted-media" ></iframe> : <p style={iframeStyle}>This movie doesn't have a trailer</p>}
-                </div> 
+                <div className="container-principal">
+                    <div className="container-image" style={containerStyle}>
+                        <div className="container-info">
+                            <span className="container-info__title">{requestMovie.title}</span>
+                            <div className="container-info__description">
+                                <p className="container-info__description-text">
+                                    {requestMovie.overview}
+                                </p>
+                                <span className="container-info__description-date">{requestMovie.release_date && requestMovie.release_date.substr(0, 4)}</span>
+                            </div> 
+                            {requestMovie.videos && requestMovie.videos.results[0] ? <iframe className="container-info__video" title="Movie's trailer" src={baseUrlTrailerDefault + (requestMovie.videos && requestMovie.videos.results[0].key)}  allow="autoplay; encrypted-media" ></iframe> : <p style={iframeStyle}>This movie doesn't have a trailer</p>}
+                        </div> 
+                    </div>
+                    <SimilarMovies changeMovieToShow={this.props.changeMovieToShow} similarMovies={this.props.similarMovies}/>
+                </div>
             </div>
         );
     }
