@@ -1,6 +1,7 @@
 
 ## movies-time
-This web site is made for find all kind of movies, sorted for genre with a little description, date of launching and a trailer.
+This application is made for find all kind of movies, sorted for genre with a little description, date of launching and a trailer.
+Find this application in the next direction: movies-time.surge.sh
 
 ## Available Scripts
 
