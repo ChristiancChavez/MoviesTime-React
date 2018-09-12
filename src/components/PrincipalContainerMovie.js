@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Favorites from './Favorites';
+import Movies from './Movies';
 const baseUrlTrailerDefault = 'https://www.youtube.com/embed/';
 const baseUrlImage = 'https://image.tmdb.org/t/p/w500';
 
@@ -18,7 +18,7 @@ class PrincipalContainerMovie extends Component {
         }
         return(
             <div className="container" style={containerStyle}>
-                <Favorites changeMovieToShow={this.props.changeMovieToShow} movies={this.props.movies} />
+                <Movies changeMovieToShow={this.props.changeMovieToShow} movies={this.props.movies} />
                 <div className="container-info">
                     <span className="container-info__title">{requestMovie.title}</span>
                     <div className="container-info__description">

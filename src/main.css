@@ -316,7 +316,7 @@
       .similars .similar__single-date {
         padding-bottom: 5px; }
 
-.favorites {
+.movies {
   display: flex;
   flex-flow: column;
   background: rgba(0, 0, 0, 0.8);
@@ -327,21 +327,21 @@
   width: 15%;
   height: 611px;
   border: 1px black solid; }
-  .favorites__title {
+  .movies__title {
     padding: 20px 15px; }
-  .favorites-movies {
+  .movies-movies {
     padding: 0px 15px;
     height: 600px;
     overflow: auto;
     border: 1px solid black; }
-    .favorites-movies__movie {
+    .movies-movies__movie {
       font-size: 12px;
       padding-top: 20px;
       display: flex;
       flex-flow: column;
       margin-bottom: 20px;
       cursor: pointer; }
-      .favorites-movies__movie-image {
+      .movies-movies__movie-image {
         width: 80px;
         margin-bottom: 5px;
         align-self: center;

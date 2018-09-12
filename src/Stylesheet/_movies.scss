@@ -1,4 +1,4 @@
-.favorites {
+.movies {
     display: flex;
     flex-flow: column;
     background: rgba(0, 0, 0, 0.8);
@@ -12,7 +12,7 @@
     &__title {
         padding: 20px 15px;
     }
-    &-movies {
+    &-container {
         padding: 0px 15px;
         height: 600px;
         overflow : auto;

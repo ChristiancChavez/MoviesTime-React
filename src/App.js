@@ -29,8 +29,7 @@ class App extends Component {
     this.getInfoMovie = this.getInfoMovie.bind(this);
     this.getSimilarMovies = this.getSimilarMovies.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
-    this.hideSearch = this.hideSearch.bind(this);
-    this.showSearch = this.showSearch.bind(this);
+    this.toggleSearch = this.toggleSearch.bind(this);
   }
 
   componentDidMount() {
@@ -94,29 +93,22 @@ class App extends Component {
     });
   }
 
-
-  hideSearch() {
+  toggleSearch() {
     this.setState({
-      isSearchOpen: false
-    });
-  }
-
-  showSearch() {
-    this.setState({
-      isSearchOpen: true
+      isSearchOpen: !this.state.isSearchOpen
     });
   }
 
   render() {
     return (
       <div>
-        <Header toggleModal={this.toggleModal} showSearch={this.showSearch} />
+        <Header toggleModal={this.toggleModal} toggleSearch={this.toggleSearch} />
         {this.state.isModalLoginOpen ? (
           <ModalLogin toggleModal={this.toggleModal} />
         ) : (
           ''
         )}
-        {this.state.isSearchOpen ? <Modal hideSearch={this.hideSearch} /> : ''}
+        {this.state.isSearchOpen ? <Modal toggleSearch={this.toggleSearch} /> : ''}
         <Carousel movies={this.state.movies} />
         <Categories
           getMoviesList={this.getMoviesList}
