@@ -6,7 +6,6 @@ import Categories from './components/Categories';
 import Transition from './components/Transition';
 import PrincipalContainerMovie from './components/PrincipalContainerMovie';
 import ModalLogin from './components/ModalLogin';
-import SimilarMovies from './components/SimilarMovies';
 import './main.css';
 import { requestGetGenresMovies } from './Request/request.js';
 import { requestMoviesList } from './Request/request.js';
@@ -118,9 +117,6 @@ class App extends Component {
           changeMovieToShow={this.getInfoMovie}
           movies={this.state.movies}
           movieToShow={this.state.movieToShow}
-        />
-        <SimilarMovies
-          changeMovieToShow={this.getInfoMovie}
           similarMovies={this.state.similarMovies}
         />
         <Transition />
